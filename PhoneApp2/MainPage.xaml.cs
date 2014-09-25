@@ -37,34 +37,27 @@ namespace CortanaRepeat
             // Create a new menu item with the localized string from AppResources.
             ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem("about");
             ApplicationBar.MenuItems.Add(appBarMenuItem);
+            appBarMenuItem.Click +=appBarMenuItem_Click;
+        }
+
+        void appBarMenuItem_Click(object sender, EventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/About.xaml", UriKind.Relative));
         }
 
         async void appBarButtonMic_Click(object sender, EventArgs e)
         {
             speechRecognizer = new SpeechRecognizer();
-            try
+            using (speechRecognizer)
             {
-                using (speechRecognizer)
+                SpeechRecognitionResult result =
+                await speechRecognizer.RecognizeAsync();
+                if (speechRecognizer.RecognizeAsync().Status == Windows.Foundation.AsyncStatus.Completed)
                 {
-                    SpeechRecognitionResult result =
-                    await speechRecognizer.RecognizeAsync();
-                    if (speechRecognizer.RecognizeAsync().Status == Windows.Foundation.AsyncStatus.Completed)
-                    {
-                        this.Dispatcher.BeginInvoke((Action)(() => { status.Text = "You said:" + Environment.NewLine + result.Text; }));
+                    this.Dispatcher.BeginInvoke((Action)(() => { status.Text = "You said:" + Environment.NewLine + result.Text; }));
 
-                    }
-                    else
-                    {
-                        //Error
-                    }
                 }
             }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -88,7 +81,6 @@ namespace CortanaRepeat
         {
             string result = null;
             NavigationContext.QueryString.TryGetValue("naturalLanguage", out result);
-
             speech(result); 
         }
 
