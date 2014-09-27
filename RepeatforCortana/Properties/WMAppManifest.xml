@@ -2,7 +2,7 @@
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
   <App xmlns="" ProductID="{c1a9686d-facd-4a44-bf27-f1d62c7f1b47}" Title="Repeat for Cortana" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RepeatforCortana author" Description="Ask Cortana to repeat something to you" SDOptOut="false" BackUpOptOut="false" Publisher="RepeatforCortana" PublisherID="{900e6ca7-570e-45a6-a9fe-ef836ee3de9a}">
-    <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
+    <IconPath IsRelative="true" IsResource="false">Assets\Logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
       <Capability Name="ID_CAP_MEDIALIB_AUDIO" />
@@ -17,20 +17,20 @@
     <Tokens>
       <PrimaryToken TokenID="RepeatforCortanaToken" TaskName="_default">
         <TemplateFlip>
-          <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
+          <SmallImageURI IsRelative="true" IsResource="false">Assets\SquareTile71x71.png</SmallImageURI>
           <Count>0</Count>
-          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>RepeatforCortana</Title>
+          <BackgroundImageURI IsRelative="true" IsResource="false">Assets\SquareTile150x150.png</BackgroundImageURI>
+          <Title>
+          </Title>
           <BackContent>
           </BackContent>
-          <BackBackgroundImageURI>
+          <BackBackgroundImageURI IsRelative="true" IsResource="false">
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
-          <DeviceLockImageURI>
+          <DeviceLockImageURI IsRelative="true" IsResource="false">
           </DeviceLockImageURI>
-          <HasLarge>
-          </HasLarge>
+          <HasLarge>false</HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>
