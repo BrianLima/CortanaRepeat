@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{c1a9686d-facd-4a44-bf27-f1d62c7f1b47}" Title="Repeat for Cortana" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RepeatforCortana author" Description="Ask Cortana to repeat something to you" SDOptOut="false" BackUpOptOut="false" Publisher="RepeatforCortana" PublisherID="{900e6ca7-570e-45a6-a9fe-ef836ee3de9a}">
+  <App xmlns="" ProductID="{c1a9686d-facd-4a44-bf27-f1d62c7f1b47}" Title="Repeat for Cortana" RuntimeType="Silverlight" Version="1.1.0.0" Genre="apps.normal" Author="Brian" Description="Ask Cortana to repeat something to you" SDOptOut="false" BackUpOptOut="false" Publisher="Briano" PublisherID="{900e6ca7-570e-45a6-a9fe-ef836ee3de9a}">
     <IconPath IsRelative="true" IsResource="false">Assets\Logo.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -20,8 +20,7 @@
           <SmallImageURI IsRelative="true" IsResource="false">Assets\SquareTile71x71.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\SquareTile150x150.png</BackgroundImageURI>
-          <Title>
-          </Title>
+          <Title>Repeat for Cortana</Title>
           <BackContent>
           </BackContent>
           <BackBackgroundImageURI IsRelative="true" IsResource="false">
