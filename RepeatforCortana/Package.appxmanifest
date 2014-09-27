@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="91194d1a-917a-4935-80bc-92e440533eab" Publisher="CN=Brian" Version="1.0.0.0" />
-  <mp:PhoneIdentity PhoneProductId="b15e7ef7-3b06-44dd-9536-de7e0795deb3" PhonePublisherId="e1b42f19-e064-4b9a-a243-908da4f480e1" />
+  <Identity Name="2af68f30-d138-430d-80c1-fb3d557946ce" Publisher="CN=Brian" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="c1a9686d-facd-4a44-bf27-f1d62c7f1b47" PhonePublisherId="900e6ca7-570e-45a6-a9fe-ef836ee3de9a" />
   <Properties>
-    <DisplayName>Cortana Repeat</DisplayName>
-    <PublisherDisplayName>Briano</PublisherDisplayName>
+    <DisplayName>RepeatforCortana</DisplayName>
+    <PublisherDisplayName>Brian</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   <Prerequisites>
@@ -15,11 +15,11 @@
     <Resource Language="x-generate" />
   </Resources>
   <Applications>
-    <Application Id="xb15e7ef7y3b06y44ddy9536yde7e0795deb3x" Executable="AGHost.exe" EntryPoint="MainPage.xaml">
-      <m3:VisualElements DisplayName="Cortana Repeat" Square150x150Logo="Assets\SquareTile150x150.png" Square44x44Logo="Assets\Logo.png" Description="Cortana will now repeat anything that you say to her" ForegroundText="light" BackgroundColor="#464646" ToastCapable="false">
+    <Application Id="App" Executable="AGHost.exe" EntryPoint="MainPage.xaml">
+      <m3:VisualElements DisplayName="Repeat for Cortana" Square150x150Logo="Assets\SquareTile150x150.png" Square44x44Logo="Assets\Logo.png" Description="Ask Cortana to repeat something to you!" ForegroundText="light" BackgroundColor="#464646">
         <m3:DefaultTile Square71x71Logo="Assets\SquareTile71x71.png">
         </m3:DefaultTile>
-        <m3:SplashScreen Image="Assets\Splashscreen.png" />
+        <m3:SplashScreen Image="Assets\SplashScreen.png" />
       </m3:VisualElements>
       <Extensions>
         <Extension Category="windows.backgroundTasks" EntryPoint="AgHost.BackgroundTask">

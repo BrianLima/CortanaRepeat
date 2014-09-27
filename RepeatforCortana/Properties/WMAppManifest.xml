@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Deployment xmlns="http://schemas.microsoft.com/windowsphone/2014/deployment" AppPlatformVersion="8.1">
   <DefaultLanguage xmlns="" code="en-US" />
-  <App xmlns="" ProductID="{b15e7ef7-3b06-44dd-9536-de7e0795deb3}" Title="Cortana Repeat" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="PhoneApp2 author" Description="Ask Cortana to repeat anything you say to her!" Publisher="PhoneApp2" PublisherID="{e1b42f19-e064-4b9a-a243-908da4f480e1}">
+  <App xmlns="" ProductID="{c1a9686d-facd-4a44-bf27-f1d62c7f1b47}" Title="Repeat for Cortana" RuntimeType="Silverlight" Version="1.0.0.0" Genre="apps.normal" Author="RepeatforCortana author" Description="Ask Cortana to repeat something to you" SDOptOut="false" BackUpOptOut="false" Publisher="RepeatforCortana" PublisherID="{900e6ca7-570e-45a6-a9fe-ef836ee3de9a}">
     <IconPath IsRelative="true" IsResource="false">Assets\ApplicationIcon.png</IconPath>
     <Capabilities>
       <Capability Name="ID_CAP_NETWORKING" />
@@ -9,34 +9,28 @@
       <Capability Name="ID_CAP_MEDIALIB_PLAYBACK" />
       <Capability Name="ID_CAP_SENSORS" />
       <Capability Name="ID_CAP_WEBBROWSERCOMPONENT" />
-      <Capability Name="ID_CAP_SPEECH_RECOGNITION" />
       <Capability Name="ID_CAP_MICROPHONE" />
-      <Capability Name="ID_CAP_IDENTITY_USER" />
-      <Capability Name="ID_CAP_IDENTITY_DEVICE" />
     </Capabilities>
     <Tasks>
-      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
+      <DefaultTask Name="_default" NavigationPage="MainPage.xaml" ActivationPolicy="Resume" />
     </Tasks>
     <Tokens>
-      <PrimaryToken TokenID="PhoneApp2Token" TaskName="_default">
+      <PrimaryToken TokenID="RepeatforCortanaToken" TaskName="_default">
         <TemplateFlip>
           <SmallImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileSmall.png</SmallImageURI>
           <Count>0</Count>
           <BackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileMedium.png</BackgroundImageURI>
-          <Title>Cortana Repeat</Title>
+          <Title>RepeatforCortana</Title>
           <BackContent>
           </BackContent>
-          <BackBackgroundImageURI IsRelative="true" IsResource="false">
+          <BackBackgroundImageURI>
           </BackBackgroundImageURI>
           <BackTitle>
           </BackTitle>
-          <LargeBackgroundImageURI IsRelative="true" IsResource="false">Assets\Tiles\FlipCycleTileLarge.png</LargeBackgroundImageURI>
-          <LargeBackContent />
-          <LargeBackBackgroundImageURI IsRelative="true" IsResource="false">
-          </LargeBackBackgroundImageURI>
-          <DeviceLockImageURI IsRelative="true" IsResource="false">
+          <DeviceLockImageURI>
           </DeviceLockImageURI>
-          <HasLarge>True</HasLarge>
+          <HasLarge>
+          </HasLarge>
         </TemplateFlip>
       </PrimaryToken>
     </Tokens>

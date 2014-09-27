@@ -1,6 +1,6 @@
-﻿using CortanaRepeat.Resources;
+﻿using RepeatforCortana.Resources;
 
-namespace CortanaRepeat
+namespace RepeatforCortana
 {
     /// <summary>
     /// Provides access to string resources.

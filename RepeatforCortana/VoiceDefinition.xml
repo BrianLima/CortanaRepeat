@@ -4,17 +4,17 @@
 <VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
   <!-- The CommandSet Name is used to programmatically access the CommandSet -->
 
-  <CommandSet xml:lang="en-us" Name="CortanaRepeat">
+  <CommandSet xml:lang="en-us" Name="Repeat">
     <!-- The CommandPrefix provides an alternative to your full app name for invocation -->
-    <!--<CommandPrefix>Repeat</CommandPrefix>-->
+    <CommandPrefix>Repeat</CommandPrefix>
 
     <!-- The CommandSet Example appears in the global help alongside your app name -->
-    <Example>Repeat she's cool</Example>
+    <Example>she's cool</Example>
 
     <Command Name="NaturalLanguage">
       <Example> She's cool </Example>
-      <ListenFor>[Cortana] repeat </ListenFor>
-      <Feedback> I'll say that... </Feedback>
+      <ListenFor>[Cortana] {naturalLanguage} </ListenFor>
+      <Feedback> Got it... </Feedback>
       <Navigate Target="MainPage.xaml" />
     </Command>
 

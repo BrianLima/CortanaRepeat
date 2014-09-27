@@ -6,11 +6,11 @@ using System.Resources;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Cortana Repeat")]
-[assembly: AssemblyDescription("Ask Cortana to repeat anything that you want!")]
+[assembly: AssemblyTitle("RepeatforCortana")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Briano")]
-[assembly: AssemblyProduct("Cortana Repeat")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("RepeatforCortana")]
 [assembly: AssemblyCopyright("Copyright ©  2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -21,7 +21,7 @@ using System.Resources;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("05a8eb52-3057-455d-8e12-bc03ec3538d4")]
+[assembly: Guid("2af68f30-d138-430d-80c1-fb3d557946ce")]
 
 // Version information for an assembly consists of the following four values:
 //

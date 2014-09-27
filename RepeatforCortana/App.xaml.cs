@@ -6,9 +6,9 @@ using System.Windows.Markup;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-using CortanaRepeat.Resources;
+using RepeatforCortana.Resources;
 
-namespace CortanaRepeat
+namespace RepeatforCortana
 {
     public partial class App : Application
     {
@@ -55,6 +55,12 @@ namespace CortanaRepeat
                 PhoneApplicationService.Current.UserIdleDetectionMode = IdleDetectionMode.Disabled;
             }
 
+        }
+
+        // Code to execute when a contract activation such as a file open or save picker returns 
+        // with the picked file or other return values
+        private void Application_ContractActivated(object sender, Windows.ApplicationModel.Activation.IActivatedEventArgs e)
+        {
         }
 
         // Code to execute when the application is launching (eg, from Start)
@@ -122,6 +128,9 @@ namespace CortanaRepeat
 
             // Handle reset requests for clearing the backstack
             RootFrame.Navigated += CheckForResetNavigation;
+
+            // Handle contract activation such as a file open or save picker
+            PhoneApplicationService.Current.ContractActivated += Application_ContractActivated;
 
             // Ensure we don't initialize again
             phoneApplicationInitialized = true;
