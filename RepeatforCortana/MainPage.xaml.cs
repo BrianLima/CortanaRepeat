@@ -1,6 +1,5 @@
 ﻿using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
-//using CortanaRepeat.Resources;
 using System;
 using System.Diagnostics;
 using System.Threading.Tasks;
@@ -36,7 +35,7 @@ namespace RepeatforCortana
 
             // Create a new menu item with the localized string from AppResources.
             ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem("about");
-            ApplicationBar.MenuItems.Add(appBarMenuItem);
+            //ApplicationBar.MenuItems.Add(appBarMenuItem);
         }
 
         async void appBarButtonMic_Click(object sender, EventArgs e)
