@@ -13,23 +13,30 @@
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="True">
 
-    <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+    <!--LayoutRoot contains the root grid where all other page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <phone:Panorama Title="repeat for cortana" Grid.ColumnSpan="2">
 
-        <!--TitlePanel contains the name of the application and page title-->
-        <StackPanel Grid.Row="0" Margin="12,17,0,28">
-            <TextBlock Text="MY APPLICATION" Style="{StaticResource PhoneTextNormalStyle}"/>
-            <TextBlock Text="page name" Margin="9,-7,0,0" Style="{StaticResource PhoneTextTitle1Style}"/>
-        </StackPanel>
+            <!--Panorama item 1-->
+            <phone:PanoramaItem Header="how-to">
+                <Grid>
+                    <TextBlock Margin="10,10,10,0" TextWrapping="Wrap" Text="To use Repeat for Cortana, bring Cortana on screen either by pressing the search button or her tile and say to her: Repeat {Something to repeat} and this app will be launched and she will repeat for you!" VerticalAlignment="Top" Height="138"/>
+                </Grid>
+            </phone:PanoramaItem>
 
-        <!--ContentPanel - place additional content here-->
-        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-
-        </Grid>
+            <!--Panorama item 3-->
+            <phone:PanoramaItem Header="where is she?">
+                <Grid>
+                    <TextBlock Margin="10,10,10,0" TextWrapping="Wrap" Text="If you don't know where Cortana is and your country native language is English, follow this guide to enable Cortana on your Windows Phone, If you live in Germany, Spain and others, wait a little bit, this app will support your language soon." VerticalAlignment="Top" Height="163"/>
+                    <Button Content="How do i enable Cortana?" Margin="10,178,10,0" VerticalAlignment="Top" Click="Button_Click_1"/>
+                </Grid>
+            </phone:PanoramaItem>
+        </phone:Panorama>
     </Grid>
+
 
 </phone:PhoneApplicationPage>
