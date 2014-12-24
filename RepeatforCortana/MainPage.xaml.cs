@@ -12,8 +12,6 @@ namespace RepeatforCortana
 {
     public partial class MainPage : PhoneApplicationPage
     {
-        SpeechRecognizer speechRecognizer;
-
         // Constructor
         public MainPage()
         {
@@ -27,43 +25,20 @@ namespace RepeatforCortana
             // Set the page's ApplicationBar to a new instance of ApplicationBar.
             ApplicationBar = new ApplicationBar();
 
-            // Create a new button and set the text value to the localized string from AppResources.
-            ApplicationBarIconButton appBarButtonMic = new ApplicationBarIconButton(new Uri("/Assets/microphone.png", UriKind.Relative));
-            appBarButtonMic.Text = "Speak";
-            appBarButtonMic.Click += appBarButtonMic_Click;
-            //ApplicationBar.Buttons.Add(appBarButtonMic);
-
             // Create a new menu item with the localized string from AppResources.
-            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem("about");
-            //ApplicationBar.MenuItems.Add(appBarMenuItem);
+            ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem("help");
+            ApplicationBar.MenuItems.Add(appBarMenuItem);
+            appBarMenuItem.Click += appBarMenuItem_Click;
         }
 
-        async void appBarButtonMic_Click(object sender, EventArgs e)
+        void appBarMenuItem_Click(object sender, EventArgs e)
         {
-            speechRecognizer = new SpeechRecognizer();
-            try
-            {
-                using (speechRecognizer)
-                {
-                    SpeechRecognitionResult result =
-                    await speechRecognizer.RecognizeAsync();
-                    if (speechRecognizer.RecognizeAsync().Status == Windows.Foundation.AsyncStatus.Completed)
-                    {
-                        this.Dispatcher.BeginInvoke((Action)(() => { status.Text = "You said:" + Environment.NewLine + result.Text; }));
+            throw new NotImplementedException();
+        }
 
-                    }
-                    else
-                    {
-                        //Error
-                    }
-                }
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-
+        private void CortanaOverlay(string message)
+        {
+            CortanaOverlayData data = new CortanaOverlayData("I heard you say:", message);
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -99,13 +74,12 @@ namespace RepeatforCortana
                 {
                     SpeechSynthesizer talk = new SpeechSynthesizer();
                     await talk.SpeakTextAsync(text);
-                    this.Dispatcher.BeginInvoke((Action)(() => { status.Text = "You said:" + Environment.NewLine + text; }));
+                    CortanaOverlay(text);
                 }
                 else
                 {
-                    this.Dispatcher.BeginInvoke((Action)(() => { status.Text = "Error contacting the servers" + Environment.NewLine + "Check your internet connection and try again."; }));
+                    CortanaOverlay(text);
                 }
-
             }
             catch (Exception exception)
             {
