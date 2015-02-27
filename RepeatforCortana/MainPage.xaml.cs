@@ -1,12 +1,15 @@
 ﻿using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using Microsoft.Phone.Tasks;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Navigation;
 using Windows.Phone.Speech.Synthesis;
 using Windows.Phone.Speech.VoiceCommands;
-using Windows.Phone.Speech.Recognition;
 
 namespace RepeatforCortana
 {
@@ -29,32 +32,50 @@ namespace RepeatforCortana
             ApplicationBarMenuItem appBarMenuItem = new ApplicationBarMenuItem("help");
             ApplicationBar.MenuItems.Add(appBarMenuItem);
             appBarMenuItem.Click += appBarMenuItem_Click;
+
+#if DEBUG
+            ApplicationBarMenuItem appBarMenuTest = new ApplicationBarMenuItem("Test");
+            ApplicationBar.MenuItems.Add(appBarMenuTest);
+            appBarMenuTest.Click += appBarMenuTest_Click;
+#endif
+        }
+
+        void appBarMenuTest_Click(object sender, EventArgs e)
+        {
+            CortanaOverlay("I am repeating what you said");
         }
 
         void appBarMenuItem_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            NavigationService.Navigate(new Uri("/TutorialPage.xaml?parameter=" + 0, UriKind.RelativeOrAbsolute));
         }
 
         private void CortanaOverlay(string message)
         {
             CortanaOverlayData data = new CortanaOverlayData("I heard you say:", message);
+            CustomMessageBox CortanaOverlay = new CustomMessageBox()
+            {
+                ContentTemplate = (DataTemplate)this.Resources["CortanaOverlay"],
+                LeftButtonContent = "Ok",
+                RightButtonContent = "Cancel",
+                IsFullScreen = false,
+                Content = data
+            };
+            speech(message);
+            CortanaOverlay.Show();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            if (e.NavigationMode == NavigationMode.New)
-            {
-                string voiceCommandName;
+            string voiceCommandName;
 
-                if (NavigationContext.QueryString.TryGetValue("voiceCommandName", out voiceCommandName))
-                {
-                    HandleVoiceCommand(voiceCommandName);
-                }
-                else
-                {
-                    Task.Run(() => InstallVoiceCommands());
-                }
+            if (NavigationContext.QueryString.TryGetValue("voiceCommandName", out voiceCommandName))
+            {
+                HandleVoiceCommand(voiceCommandName);
+            }
+            else
+            {
+                Task.Run(() => InstallVoiceCommands());
             }
         }
 
@@ -63,7 +84,7 @@ namespace RepeatforCortana
             string result = null;
             NavigationContext.QueryString.TryGetValue("naturalLanguage", out result);
 
-            speech(result);
+            CortanaOverlay(result);
         }
 
         private async void speech(string text)
@@ -74,11 +95,6 @@ namespace RepeatforCortana
                 {
                     SpeechSynthesizer talk = new SpeechSynthesizer();
                     await talk.SpeakTextAsync(text);
-                    CortanaOverlay(text);
-                }
-                else
-                {
-                    CortanaOverlay(text);
                 }
             }
             catch (Exception exception)

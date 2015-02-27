@@ -8,7 +8,7 @@
             this._message = Message;
         }
 
-        private string _title { get; set; }
-        private string _message { get; set; }
+        public string _title { get; set; }
+        public string _message { get; set; }
     }
 }

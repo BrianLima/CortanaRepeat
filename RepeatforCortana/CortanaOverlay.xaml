@@ -9,8 +9,8 @@
     Foreground="{StaticResource PhoneForegroundBrush}" d:DesignWidth="480" Height="215">
 
     <Grid x:Name="LayoutRoot" Background="{StaticResource PhoneChromeBrush}" Height="215" VerticalAlignment="Top">
-        <TextBlock Margin="10,90,10,0" TextWrapping="Wrap" Text="{Binding Title}" VerticalAlignment="Top" Foreground="{StaticResource PhoneAccentBrush}" FontSize="36"/>
-        <TextBlock Margin="10,140,10,0" TextWrapping="Wrap" Text="{Binding Message}" VerticalAlignment="Top" Height="65" FontSize="24"/>
+        <TextBlock Margin="10,90,10,0" TextWrapping="Wrap" Text="{Binding _title}" VerticalAlignment="Top" Foreground="{StaticResource PhoneAccentBrush}" FontSize="36"/>
+        <TextBlock Margin="10,140,10,0" TextWrapping="Wrap" Text="{Binding _message}" VerticalAlignment="Top" Height="65" FontSize="24"/>
         <Ellipse HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="82" StrokeThickness="11" Opacity="0.4" Margin="3,2,0,0">
         	<Ellipse.Stroke>
         		<SolidColorBrush Color="{StaticResource PhoneAccentColor}"/>

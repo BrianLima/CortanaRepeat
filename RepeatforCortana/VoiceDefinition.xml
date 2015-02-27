@@ -24,4 +24,85 @@
 
   </CommandSet>
 
+  <CommandSet xml:lang="en-ca" Name="Repeat">
+    <!-- The CommandPrefix provides an alternative to your full app name for invocation -->
+    <CommandPrefix>Repeat</CommandPrefix>
+
+    <!-- The CommandSet Example appears in the global help alongside your app name -->
+    <Example>she's cool</Example>
+
+    <Command Name="NaturalLanguage">
+      <Example> She's cool </Example>
+      <ListenFor>[Cortana] {naturalLanguage} </ListenFor>
+      <Feedback> Got it... </Feedback>
+      <Navigate Target="MainPage.xaml" />
+    </Command>
+
+    <PhraseTopic Label="naturalLanguage" Scenario="Natural Language">
+      <Subject>Repeat</Subject>
+    </PhraseTopic>
+
+  </CommandSet>
+
+  <CommandSet xml:lang="en-au" Name="Repeat">
+    <!-- The CommandPrefix provides an alternative to your full app name for invocation -->
+    <CommandPrefix>Repeat</CommandPrefix>
+
+    <!-- The CommandSet Example appears in the global help alongside your app name -->
+    <Example>she's cool</Example>
+
+    <Command Name="NaturalLanguage">
+      <Example> She's cool </Example>
+      <ListenFor>[Cortana] {naturalLanguage} </ListenFor>
+      <Feedback> Got it... </Feedback>
+      <Navigate Target="MainPage.xaml" />
+    </Command>
+
+    <PhraseTopic Label="naturalLanguage" Scenario="Natural Language">
+      <Subject>Repeat</Subject>
+    </PhraseTopic>
+
+  </CommandSet>
+
+  <CommandSet xml:lang="en-in" Name="Repeat">
+    <!-- The CommandPrefix provides an alternative to your full app name for invocation -->
+    <CommandPrefix>Repeat</CommandPrefix>
+
+    <!-- The CommandSet Example appears in the global help alongside your app name -->
+    <Example>she's cool</Example>
+
+    <Command Name="NaturalLanguage">
+      <Example> She's cool </Example>
+      <ListenFor>[Cortana] {naturalLanguage} </ListenFor>
+      <Feedback> Got it... </Feedback>
+      <Navigate Target="MainPage.xaml" />
+    </Command>
+
+    <PhraseTopic Label="naturalLanguage" Scenario="Natural Language">
+      <Subject>Repeat</Subject>
+    </PhraseTopic>
+
+  </CommandSet>
+
+  <CommandSet xml:lang="en-gb" Name="Repeat">
+    <!-- The CommandPrefix provides an alternative to your full app name for invocation -->
+    <CommandPrefix>Repeat</CommandPrefix>
+
+    <!-- The CommandSet Example appears in the global help alongside your app name -->
+    <Example>she's cool</Example>
+
+    <Command Name="NaturalLanguage">
+      <Example> She's cool </Example>
+      <ListenFor>[Cortana] {naturalLanguage} </ListenFor>
+      <Feedback> Got it... </Feedback>
+      <Navigate Target="MainPage.xaml" />
+    </Command>
+
+    <PhraseTopic Label="naturalLanguage" Scenario="Natural Language">
+      <Subject>Repeat</Subject>
+    </PhraseTopic>
+
+  </CommandSet>
+  
+
 </VoiceCommands>
